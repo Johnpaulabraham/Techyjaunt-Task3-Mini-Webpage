@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color1: #fff;
+    --color2: #000;
+    --color3: #b83c08
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--color1);
+    padding: 12px 20px;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    padding-left: 30px;
+}
+
+.menu li a {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--color2);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.5s ease-in-out;
+}
+
+.menu li a:hover::after {
+    width: 100%;
+    border-bottom: 3px solid var(--color3);
+}
+
+.open-menu,
+.close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 50px;
+    right: 20px;
+}
+
+#check {
+    display: none;
+}
+
+
+.nav-bar i {
+    color: var(--color2);
+}
+
+.nav-btn {
+    padding-left: 20px;
+    display: none;
+    flex-direction: column;
+}
+
+.btn0 {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(19, 18, 18);
+    color: var(--color1);
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    font-family: 'Roboto';
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn0:hover {
+    background-color: black;
+}
+
+/* Hero Styling */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    height: 550px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.70),
+            rgba(0, 0, 0, 0.70)), url(../images/GPS.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: cover;
+}
+
+#hero-div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    color: white;
+    transition-property: all;
+    transition-duration: 0.8s;
+    transition-delay: 0.1s;
+}
+
+#hero h2:hover {
+    font-size: 3.5rem;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cta {
+    width: 270px;
+    height: 60px;
+    background-color: var(--color3);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    font-family: 'Roboto';
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 10px auto;
+    padding: 5px;
+    transition: 1s ease-in-out;
+}
+
+.cta:hover {
+    width: 500px;
+    transform: translate(30px, 30px);
+    background-color: rgba(7, 99, 19, 0.884);
+}
+
+
+
+
+
+@media (max-width: 610px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 65%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color1);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .menu li {
+        margin-top: 40px;
+    }
+
+    .menu li a {
+        padding-left: 10px;
+    }
+
+    .open-menu,
+    .close-menu {
+        display: block;
+    }
+
+    #check:checked~.menu {
+        right: 0;
+    }
+
+    .nav-btn {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .nav-btn .btn0 {
+        margin-top: 15px;
+    }
+
+
+    #hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1440px;
+        height: 550px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.70),
+                rgba(0, 0, 0, 0.70)), url(../images/GPS.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 70%;
+        background-size: cover;
+    }
+
+
+    #hero h2 {
+        font-size: 2rem;
+        color: white;
+        transition-property: all;
+        transition-duration: 0.8s;
+        transition-delay: 0.1s;
+    }
+
+    #hero h2:hover {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+        color: white;
+    }
+
+    .cta {
+        width: 270px;
+        height: 60px;
+        background-color: var(--color3);
+        color: white;
+        border-radius: 10px;
+        border: none;
+        font-weight: 500;
+        font-family: 'Roboto';
+        font-size: 1.5em;
+        cursor: pointer;
+        margin: 10px auto;
+        padding: 5px;
+        transition: 1s ease-in-out;
+    }
+
+    .cta:hover {
+        width: 500px;
+        transform: translate(30px, 30px);
+        background-color: rgba(7, 99, 19, 0.884);
+    }
+
+}
